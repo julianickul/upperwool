@@ -1,0 +1,115 @@
+//- instagram.pug
+extends ./templates/layout.pug
+
+block main_content
+    .container
+        section.instagram
+            .gap-10
+                .section_header
+                    h2 INSTAGRAM
+                .instagram_list.gap-hor
+                    .g
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                .instagram_item
+                                    .gap-10
+                                        .instagram_item_pic
+                                            .pic_inner
+                                                img(src="images/content/lookbook_12.jpg", alt="")
+                                            .instagram_item_actions
+                                                a.open-instagram-gallery(href="javascript:void(0)")
+                                                    span.icon.icon--type_increase
+                                                    |Увеличить изображение
+                                                a(href="javascript:void(0)") 
+                                                    span.icon.icon--type_arr_right
+                                                    |@UPPERWOOL17
+                                        .instagram_item_caption
+                                            span 6 ДЕКАБРЯ
+                                            span
+                                                a(href="javascript:void(0)") Свитер оттенка milk с декором из фактурных кос на рукавах
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +insta-item('lookbook_12.jpg')
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +insta-item('lookbook_10.jpg')
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +insta-item('lookbook_11.jpg')
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +insta-item('lookbook_09.jpg')
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +insta-item('lookbook_08.jpg')
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +insta-item('lookbook_07.jpg')
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +insta-item('lookbook_06.jpg')
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +insta-item('lookbook_05.jpg')
+                    .show-more
+                        a(href="javascript:void(0)") + ещё
+
+        include templates/user_interaction
+
+
+block append footer
+    #insta_gallery.popup_gallery.mfp-hide
+        .popup_content
+            .carousel_container
+                ul.carousel
+                    li
+                        img(src="./images/content/lookbook_09.jpg", alt="")
+                    li
+                        img(src="./images/content/product_carousel_04.jpg", alt="")
+                    li
+                        img(src="./images/content/product_carousel_02.jpg", alt="")
+                    li
+                        img(src="./images/content/promo-links_01.jpg", alt="")
+                    li
+                        img(src="./images/content/product_carousel_03.jpg", alt="")
+                .instagram_item_caption
+                    div#insta_caption Скоро весна🍀, а значит длинный кашемировый кардиган будет очень кстати 🛍 ✔️Кардиган удлиненный, цвет «пыльная роза», 💯 % кашемир🎀
+                    span 6 ДЕКАБРЯ
+                    a(href="javascript:void(0)") 
+                        span.icon.icon--type_arr_right_pink
+                        |@UPPERWOOL17
+                .carousel_prev
+                    span.icon.icon--type_arr_left
+                .carousel_next
+                    span.icon.icon--type_arr_right
+            
+
+block append body_scripts
+    script(src="./js/jquery.carouFredSel-6.2.1.js")
+    script(src="./js/jquery.touchSwipe.min.js")
+    script(src="./js/jquery.magnific-popup.min.js")
+    script.
+        $(function(){
+            var images = $('.instagram_item_pic');
+            cropToRect(images);
+            animateBlock($('.instagram_list'));
+            $('.open-instagram-gallery').magnificPopup({
+                items: [
+                    {
+                        src: '#insta_gallery',
+                        type: 'inline'
+                    }
+                ],
+                preloader: true,
+
+                callbacks: {
+                    open: function() {
+                        initInstaCarousel();
+                    }
+                },
+                gallery: {
+                    enabled: true
+                },
+                type: 'image'
+            });
+        });

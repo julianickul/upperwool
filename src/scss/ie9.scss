@@ -1,0 +1,43 @@
+.interaction {
+    display: table;
+    .interaction_item,
+    .subscribe_container {
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+.footer-line {
+    display: table;
+    .folow-us,
+    .copyright,
+    .developer {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+.video_list_item {
+    .video_list_item-caption {
+        display: table;
+        span {
+            vertical-align: bottom;
+        }
+    }
+    a:hover {
+        .video_list_item-caption {
+            span {
+                display: table-cell;
+            }
+        }
+    }
+}
+.lookbook {
+    .g-2cols {
+        display: table;
+        .u-col-34per,
+        .u-col-49per,
+        .u-col-64per {
+            display: table-cell;
+            vertical-align: top;
+        }
+    }
+}

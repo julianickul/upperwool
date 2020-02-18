@@ -1,0 +1,113 @@
+//- Instagram
+.instagram_list {
+    margin-bottom: 20px;
+    opacity: 0;
+}
+.instagram_item {
+    .instagram_item_pic {
+        background: #303030;
+        @extend %crop_image;
+        margin-bottom: 10px;
+        .pic_inner {
+            opacity: 1;
+        }
+    }
+    &:hover {
+        .pic_inner {
+            opacity: .7;
+        }
+        .instagram_item_actions {
+            display: block;
+        }
+        .instagram_item_caption {
+            a {
+                color:#7e7e7e;
+            }
+        }
+    }
+    .instagram_item_actions {
+        color:#fff;
+        font-size: 16px;
+        position: absolute;
+        top:50%;
+        left:0;
+        width: 100%;
+        text-align: center;
+        height: 56px;
+        margin-top: -28px;
+        display: none;
+        a {
+            display: inline-block;
+            text-align: center;
+            padding: 0 20px;
+            color:#fff;
+
+            width: 50%;
+            vertical-align: top;
+            &:first-child {
+                border-right: 1px solid #fff;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .icon {
+            display: block;
+            margin: 0 auto 5px;
+            &.icon--type_arr_right {
+                margin: 0 0 5px;
+            }
+        }
+    }
+    .instagram_item_caption {
+        span {
+            font-size: 14px;
+            color:#000;
+            &:first-child {
+                font-size: 12px;
+                color: #959595;
+                float:left;
+                text-transform: uppercase;
+                width: 100px;
+                display: block;
+            }
+            &:last-child {
+                display: block;
+                margin-left: 100px;
+                text-align: right
+            }
+        }
+    }
+}
+
+.popup_gallery  {
+    .carousel_container .carousel {
+        opacity: 1;
+    }
+    .instagram_item_caption {
+        padding: 15px 25px;
+        background: #fff;
+        div {
+            text-align: center;
+            margin:0 auto 15px;
+            color:#000;
+        }
+        span {
+            color:#959595;
+            float: left;
+            text-transform: uppercase;
+            line-height: 32px;
+        }
+        a {
+            float: right;
+            color:$link_color3;
+            line-height: 32px;
+            &:hover {
+                color:#000;
+                .icon--type_arr_right_pink {
+                    background-position: 0 -340px;
+                }
+            }
+        }
+    }
+}

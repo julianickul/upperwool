@@ -1,0 +1,30 @@
+.interaction {
+  display: table; }
+  .interaction .interaction_item,
+  .interaction .subscribe_container {
+    display: table-cell;
+    vertical-align: top; }
+
+.footer-line {
+  display: table; }
+  .footer-line .folow-us,
+  .footer-line .copyright,
+  .footer-line .developer {
+    display: table-cell;
+    vertical-align: middle; }
+
+.video_list_item .video_list_item-caption {
+  display: table; }
+  .video_list_item .video_list_item-caption span {
+    vertical-align: bottom; }
+
+.video_list_item a:hover .video_list_item-caption span {
+  display: table-cell; }
+
+.lookbook .g-2cols {
+  display: table; }
+  .lookbook .g-2cols .u-col-34per,
+  .lookbook .g-2cols .u-col-49per,
+  .lookbook .g-2cols .u-col-64per {
+    display: table-cell;
+    vertical-align: top; }

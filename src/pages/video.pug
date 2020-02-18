@@ -1,0 +1,42 @@
+//- Video.pug
+extends ./templates/layout.pug
+
+block main_content
+    .container
+        section.video
+            .gap-10
+                .section_header
+                    h2 ВИДЕО
+                .video_list.gap-hor
+                    .g
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +video-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +video-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +video-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +video-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +video-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +video-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +video-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +video-item
+                        //.u-8-24
+                            .gap-10
+                                +video-item
+                .show-more
+                    a(href="javascript:void(0)") + ещё
+
+        include templates/user_interaction

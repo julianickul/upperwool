@@ -1,0 +1,71 @@
+//- base.pug
+extends ./templates/layout.pug
+
+block main_content
+	.container
+		section
+			.gap-10
+				.breadcrumbs
+					a(href="javascript:void(0)") 
+						span.breadcrumbs_icon
+							span.icon.icon.icon--type_nav_prev
+						span Lookbook
+				.lookbook
+					.lookbook_collection_item
+						.g.g-2cols
+							.u-col-64per.column--justify_top
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_09.jpg", alt="")
+									span Полувер из тонкой шерсти
+								.lookbook_collection_title
+									.lookbook_collection_title_name осенняя коллекция
+									.lookbook_collection_title_date сентябрь`18
+							.u-col-34per
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_10.jpg", alt="")
+									span Вязаный топ для пляжных прогулок
+						
+						.g.g-2cols
+							.u-col-49per
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_11.jpg", alt="")
+									span Вязаный топ для пляжных прогулок
+							.u-col-49per
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_12.jpg", alt="")
+									span Вязаный топ для пляжных прогулок
+
+						.g.g-2cols
+							.u-col-64per
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_14.jpg", alt="")
+									span Вязаный топ для пляжных прогулок
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_15.jpg", alt="")
+									span Вязаный топ для пляжных прогулок
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_17.jpg", alt="")
+									span Вязаный топ для пляжных прогулок
+							.u-col-34per
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_13.jpg", alt="")
+									span Вязаный топ для пляжных прогулок
+								a.lookbook_pic(href="javascript:void(0)")
+									img(src="images/content/lookbook_16.jpg", alt="")
+									span Вязаный топ для пляжных прогулок
+
+	.lookbook_navigation
+		.lookbook_navigation_item_prev
+			a(href="javascript:void(0)")
+				span.lookbook_pic
+					img(src="images/content/lookbook_prev.jpg", alt="")
+				span.lookbook_title
+					span.icon.icon.icon--type_nav_prev
+					span.lookbook_title_text Невероятная сверхастрономическая зимняя коллекция
+		.lookbook_navigation_item_next
+			a(href="javascript:void(0)")
+				span.lookbook_title
+					span.icon.icon.icon--type_nav_next
+					span.lookbook_title_text зимняя <br/>коллекция
+				span.lookbook_pic
+					img(src="images/content/lookbook_next.jpg", alt="")

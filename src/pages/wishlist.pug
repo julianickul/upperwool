@@ -1,0 +1,44 @@
+//- Wishlist.pug
+extends ./templates/layout.pug
+
+block main_content
+    .container
+        section.wishlist
+            .gap-10
+                .section_header
+                    h2 Wishlist
+                .gap-hor
+                    .g
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +wishlist-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +wishlist-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +wishlist-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +wishlist-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +wishlist-item
+                        .u-1.u-xs-1-2.u-md-8-24
+                            .gap-10
+                                +wishlist-item
+                    
+                    .show-more
+                        a(href="javascript:void(0)") + ещё
+
+
+        include templates/user_interaction
+
+
+block append body_scripts
+    script(src="./js/jquery.carouFredSel-6.2.1.js")
+    script(src="./js/jquery.touchSwipe.min.js")
+    script.
+        $(function(){
+            initCatalogCarousel();
+        })

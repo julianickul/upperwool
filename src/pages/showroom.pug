@@ -1,0 +1,41 @@
+//- Contacts.pug
+extends ./templates/layout.pug
+
+block main_content
+    .container
+        section
+            .gap-10
+                .section_header
+                    h2 showroom
+                
+                .showroom
+                    .content_block
+                        h2 Showroom в Москве
+                        p Москва, ТЦ “GOLDEN”, пер. Филипповский, 9<br/> Вт-Вс, 10:00-20:00
+
+                    .showroom_photo
+                        img(src="./images/content/main_slider_01.jpg", alt="")
+                    .showroom_photo
+                        img(src="./images/content/promo-links_02.jpg", alt="")
+                    .showroom_photo
+                        img(src="./images/content/promo-links_03.jpg", alt="")
+                        
+                    .map
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac822f76664e1c2dee2bb81ea887ec2349d394da769efb9ffa33407f7be1e04ec&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+
+                    .content_block
+                        p.
+                            Вы можете задать вопрос в <a href="javascript:void(0)">Direct</a> / <a href="javascript:void(0)">Viber</a> / <a href="javascript:void(0)">WhatsApp</a> по номеру: +7-903-214-46-21.<br/>
+                            А также <a href="#popup_subscribe" id="open_popup_subscribe">подписаться</a> на новости showroom.
+
+block append footer
+    include templates/popup_subscribe
+
+block append body_scripts
+    script(src="./js/jquery.magnific-popup.min.js")
+    script.
+        $(function(){
+            $('#open_popup_subscribe').magnificPopup({
+                type:'inline'
+            });
+        })

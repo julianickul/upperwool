@@ -1,0 +1,338 @@
+mixin logo-mainpage
+    .logo
+        a(href="index.html")
+            img(src="./images/logo.png", alt="UpperWool")
+mixin logo
+    .logo
+        a(href="index.html")
+            img(src="./images/logo-sm.png", alt="UpperWool")
+
+//- Carousel
+mixin carousel-products
+    .carousel_container.products-carousel
+        ul.carousel
+            li.products-carousel_item
+                .gap-10
+                    .product_pic
+                        a.pic_inner(href="javascript:void(0)")
+                            img(src="./images/content/lookbook_02.jpg", alt="")
+                    +product-params-for-carousel
+            li.products-carousel_item
+                .gap-10
+                    .product_pic
+                        a.pic_inner(href="javascript:void(0)")
+                            img(src="./images/content/product_carousel_02.jpg", alt="")
+                    +product-params-for-carousel
+            li.products-carousel_item
+                .gap-10
+                    .product_pic
+                        a.pic_inner(href="javascript:void(0)")
+                            img(src="./images/content/product_carousel_01.jpg", alt="")
+                    +product-params-for-carousel
+            li.products-carousel_item
+                .gap-10
+                    .product_pic
+                        a.pic_inner(href="javascript:void(0)")
+                            img(src="./images/content/promo-links_04.jpg", alt="")
+                    +product-params-for-carousel
+            li.products-carousel_item
+                .gap-10
+                    .product_pic
+                        a.pic_inner(href="javascript:void(0)")
+                            img(src="./images/content/top_sellers_03.jpg", alt="")
+                    +product-params-for-carousel
+            li.products-carousel_item
+                .gap-10
+                    .product_pic
+                        a.pic_inner(href="javascript:void(0)")
+                            img(src="./images/content/top_sellers_04.jpg", alt="")
+                    +product-params-for-carousel
+            //- for (var x = 1; x < 6; x++)
+                li
+                    .gap-10
+                        -var filename = "top_sellers_0" + x +".jpg"
+                        .product_pic
+                            a.product_pic_inner(href="javascript:void(0)")
+                                img(src="./images/content/"+filename, alt="")
+                        +product-params-for-carousel
+        .carousel_prev
+            span.icon.icon--type_nav_prev
+        .carousel_next
+            span.icon.icon--type_nav_next
+
+mixin product-params-for-carousel
+    .product_param-group
+        .g
+            .u-1.u-lg-1-2
+                .product_price 12 000 руб 
+                .product_name
+                    a(href="javascript:void(0)") Свитер с горлом
+            .u-1.u-lg-1-2
+                +product-size-static
+                +product-color-static                
+
+
+//- Catalog
+mixin catalog-item(_is_in_wishlist)
+    .catalog_item
+        .carousel_container
+            ul.carousel
+                - for (var x = 1; x < 4; x++)
+                    li 
+                        -var filename = "product_carousel_0" + x +".jpg"
+                        .product_pic
+                            a(href="javascript:void(0)")
+                                img(src="./images/content/"+filename, alt="")
+                    
+            .carousel_prev
+                span.icon.icon--type_nav_prev
+            .carousel_next
+                span.icon.icon--type_nav_next
+            
+            if _is_in_wishlist
+                .wishlist-action.selected
+                    span.wishlist-action_icon
+                        svg(width="26", height="27", viewBox="0 0 84 74")
+                            |<use xlink:href="#heart" x="0" y="2" width="26" height="27" class="fill"/>
+                    span.wishlist-action_text Добавлено в wishlist
+            else
+                .wishlist-action
+                    span.wishlist-action_icon
+                        svg(width="26", height="27", viewBox="0 0 84 74")
+                            |<use xlink:href="#heart" x="0" y="2" width="26" height="27"/>
+                    span.wishlist-action_text Добавить в wishlist
+        +product-params-for-category
+
+mixin product-params-for-category
+    .product_param-group
+        .g
+            .u-1-2.u-xs-1.u-sm-1-2.u-md-1.u-lg-1-2
+                .product_price 12 000 руб 
+                .product_name
+                    a(href='#') Свитер с горлом
+            .u-1-2.u-xs-1.u-sm-1-2.u-md-1.u-lg-1-2
+                +product-size
+                //span.error Выберите размер
+                +product-color-with-titles
+                
+
+//- Product Size
+mixin product-size-chbx
+    ul.product_size
+        li
+            input.input(type="checkbox", name="size", id="size0", value="0", disabled="disabled")
+            label.label(for="size0") 
+                span XS
+        li
+            input.input(type="checkbox", name="size", id="size1", value="1", disabled="disabled")
+            label.label(for="size1") 
+                span X
+        li
+            input.input(type="checkbox", name="size", id="size2", value="2")
+            label.label.product-qty_few(for="size2") 
+                span M
+        li
+            input.input(type="checkbox", name="size", id="size3", value="3")
+            label.label(for="size3") 
+                span L
+        li
+            input.input(type="checkbox", name="size", id="size4", value="4", checked="checked")
+            label.label(for="size4") 
+                span XL
+
+mixin product-size-radio
+    ul.product_size
+        li
+            input.input(type="radio", name="size", id="size0", value="0", disabled="disabled")
+            label.label.product-qty_na(for="size0") 
+                span XS
+        li
+            input.input(type="radio", name="size", id="size1", value="1", disabled="disabled")
+            label.label.product-qty_na(for="size1") 
+                span X
+        li
+            input.input(type="radio", name="size", id="size2", value="2")
+            label.label.product-qty_few(for="size2") 
+                span M
+        li
+            input.input(type="radio", name="size", id="size3", value="3")
+            label.label(for="size3") 
+                span L
+        li
+            input.input(type="radio", name="size", id="size4", value="4", checked="checked")
+            label.label(for="size4") 
+                span XL
+
+mixin product-size
+    ul.product_size
+        li
+            a.label.product-qty_na(href="javascript:void(0)")
+                span XS
+        li
+            a.label.product-qty_na(href="javascript:void(0)")
+                span X
+        li
+            a.label.product-qty_few(href="javascript:void(0)")
+                span M
+        li
+            a.label(href="javascript:void(0)")
+                span L
+        li
+            a.label.selected(href="javascript:void(0)")
+                span XL
+
+mixin product-size-static
+    ul.product_size
+        li
+            .product-qty_na
+                span XS
+        li
+            .product-qty_na
+                span X
+        li
+            .product-qty_few
+                span M
+        li
+            div
+                span L
+        li
+            .selected
+                span XL
+
+
+//- Product Size
+mixin product-color
+    ul.product_color
+        li
+            a(href="javascript:void(0)")
+                span(style="background-color:#888;")
+        li
+            a(href="javascript:void(0)")
+                span(style="background-color:#000;")
+
+mixin product-color-radio
+    ul.product_color
+        li
+            input.input(type="radio", name="color", id="color0", value="0")
+            label.label.product-qty_na(for="color0") 
+                span(style="background-color:#888;")
+        li
+            input.input(type="radio", name="color", id="color1", value="1")
+            label.label.product-qty_na(for="color1") 
+                span(style="background-color:#000;")
+        
+
+mixin product-color-static
+    ul.product_color
+        li
+            div
+                span(style="background-color:#888;")
+        li
+            div
+                span(style="background-color:#000;")
+
+mixin product-color-with-titles
+    ul.product_color
+        li
+            a(href="javascript:void(0)")
+                span(style="background-color:#888;")
+                span.product_color_name Серый
+        li
+            a(href="javascript:void(0)")
+                span(style="background-color:#000;")
+                span.product_color_name Черный
+    //span.error Выберите цвет
+
+
+
+
+
+//- Tab
+mixin accordion-order-info
+    .accordion
+        input(id="tab-2", type="checkbox", name="tabs")
+        label(for="tab-2") Информация о заказе
+        .accordion_content
+            .gap_special
+                p
+                    a(href="javascript:void(0)") Как сделать заказ
+                p
+                    a(href="javascript:void(0)") Доставка
+
+mixin accordion
+    .accordion
+        input(id="tab-1", type="checkbox", name="tabs")
+        label(for="tab-1") Подробное описание
+        .accordion_content
+            .gap_special
+                p Не стирать / Отбеливать запрещено / Не гладить / Химчистка с использованием тетрахлорэтилена / Не использовать машинную сушку
+    +accordion-order-info
+
+//- Wishlist
+mixin add-to-wishlist-button
+    .button--type_wishlist
+        span.button_icon
+            svg(width="26", height="27", viewBox="0 0 84 74")
+                |<use xlink:href="#heart" x="0" y="2" width="26" height="27"/>
+        span.button_text Добавить в wishlist
+
+
+//-Instagram
+mixin insta-item(_filename_)
+    .instagram_item
+        .gap-10
+            .instagram_item_pic
+                .pic_inner
+                    img(src="images/content/"+_filename_, alt="")
+                .instagram_item_actions
+                    a.open-instagram-gallery(href="javascript:void(0)")
+                        span.icon.icon--type_increase
+                        |Увеличить
+                    a(href="javascript:void(0)") 
+                        span.icon.icon--type_arr_right
+                        |@UPPERWOOL17
+            .instagram_item_caption
+                span 6 ДЕКАБРЯ
+                span
+                    a(href="javascript:void(0)") Свитер оттенка milk с декором из фактурных кос на рукавах
+
+//-Video
+mixin video-item
+    .video_list_item
+        a.video-link(href="javascript:void(0)")
+            img(src="images/content/top_sellers_01.jpg", alt="")
+            span.icon.icon--type_video
+            span.video_list_item-caption 
+                span Летняя коллекция 2018
+
+//-Wishlist
+mixin wishlist-product-params
+    .product_param-group
+        .product_price.align_center 12 000 руб 
+        .g
+            .u-1-2
+                .product_name
+                    a(href="javascript:void(0)") Свитер с горлом
+            .u-1-2
+                +product-color-static
+
+mixin wishlist-item
+    .catalog_item
+        .carousel_container
+            ul.carousel
+                - for (var x = 1; x < 4; x++)
+                    li 
+                        -var filename = "product_carousel_0" + x +".jpg"
+                        .product_pic
+                            a(href="javascript:void(0)")
+                                img(src="./images/content/"+filename, alt="")
+            .carousel_prev
+                span.icon.icon--type_nav_prev
+            .carousel_next
+                span.icon.icon--type_nav_next
+            .wishlist-action
+                span.wishlist-action_icon
+                    .icon-cross
+                span.wishlist-action_text Удалить из wishlist
+
+        +wishlist-product-params

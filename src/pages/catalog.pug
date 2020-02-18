@@ -1,0 +1,131 @@
+//- main.pug
+extends ./templates/layout.pug
+
+block main_content
+    .container
+        .g
+            .u-1.u-md-6-24
+            .u-1.u-md-18-24
+                .filters
+                    .filters_item
+                        span.filters_item_title Цвет (2)
+                        .filters_item_dd
+                            ul.checkbox-group.filters_color-group
+                                li
+                                    input.input(type="checkbox", name="color", id="color0", value="0")
+                                    label.label(for="color0") 
+                                        span.color(style="background-color:#698cc8;")
+                                        span.color-name Аквамарин
+                                li
+                                    input.input(type="checkbox", name="color", id="color1", value="1")
+                                    label.label(for="color1") 
+                                        span.color(style="background-color:#e296bf;")
+                                        span.color-name Розовый
+                                li
+                                    input.input(type="checkbox", name="color", id="color2", value="2")
+                                    label.label(for="color2") 
+                                        span.color(style="background-color:#4d59a1;")
+                                        span.color-name Ультрамарин
+
+                    .filters_item 
+                        span.filters_item_title Размер
+                        .filters_item_dd
+                            +product-size-chbx
+                            .product_size_table-lnk
+                                a(href="#popup_size_table") Размерная справка
+                        
+                    .filters_item 
+                        span.filters_item_title Цена
+                        .filters_item_dd
+                            .slider-range_boundaries
+                                |от
+                                input.input--type_text#slider_range_bottom(type="text")
+                                |до
+                                input.input--type_text#slider_range_top(type="text")
+                            .slider-range#slider_range
+                    .filters_item 
+                        span.filters_item_title.remove-filters
+                            .icon-cross
+                            |Отключить все фильтры
+        .g
+            .u-1.u-xs-8-24.u-md-6-24
+                .sidebar-nav
+                    .gap-10
+                        nav.navigation
+                            ul.navigation--level_0
+                                li
+                                    a(href="javascript:void(0)") КАТАЛОГ
+
+                                    ul.navigation.navigation--level_1.checkbox-group
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat0", value="0")
+                                            label.label(for="cat0") Пуловеры
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat1", value="1")
+                                            label.label(for="cat1") Пальто
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat2", value="2")
+                                            label.label(for="cat2") Свитера
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat3", value="3")
+                                            label.label(for="cat3") Кардиганы
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat4", value="4")
+                                            label.label(for="cat4") Жилеты
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat5", value="5")
+                                            label.label(for="cat5") Топы
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat6", value="6")
+                                            label.label(for="cat6") Платья
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat7", value="7")
+                                            label.label(for="cat7") Юбки
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat8", value="8")
+                                            label.label(for="cat8") Шарфы
+                                        li
+                                            input.input(type="checkbox", name="category", id="cat9", value="9")
+                                            label.label(for="cat9") Аксессуары
+                                li
+                                    a(href="javascript:void(0)") NEW
+                            
+                        .remove-cat 
+                            .icon-cross 
+                            |Сбросить выбранные категории
+                        +accordion-order-info
+            .u-1.u-xs-16-24.u-md-18-24
+                .g
+                    .u-1.u-md-1-2
+                        .gap-10
+                            +catalog-item(0)
+                    .u-1.u-md-1-2
+                        .gap-10
+                            +catalog-item(1)
+                    .u-1.u-md-1-2
+                        .gap-10
+                            +catalog-item(1)
+                    .u-1.u-md-1-2
+                        .gap-10
+                            +catalog-item(0)
+                    
+                .show-more
+                    a(href="javascript:void(0)") + смотреть ещё модели
+
+block append footer
+    include templates/popup_size_table
+
+block append body_scripts
+    script(src="./js/jquery.carouFredSel-6.2.1.js")
+    script(src="./js/jquery.touchSwipe.min.js")
+    script(src="./js/jquery.magnific-popup.min.js")
+    script(src="./js/jquery-ui.min.js")
+    script.
+        $(function(){
+            initCatalogCarousel();
+            initFilters();
+            InitSlider();
+             $('.product_size_table-lnk a').magnificPopup({
+                type:'inline'
+            });
+        })

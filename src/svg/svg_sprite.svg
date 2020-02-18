@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+    <defs>
+        <style>
+        .cls-1 {
+            fill:currentColor;
+            fill-rule: evenodd;
+        }
+        </style>
+    </defs>
+    <g id="magnifier">
+        <ellipse cx="17.313" cy="16.938" rx="15.313" ry="14.938" fill="none" stroke-width="3"/>
+        <path stroke-width="3" d="M28.782,26.259L46,39.322"/>
+    </g>
+    <g id="heart">
+        <path class="cls-1" stroke-width="4" d="M41.981,17.29C31.625-6.983,2.189-1.319,2,26.853,1.888,42.325,16.012,48.109,25.416,54.294c9.119,6,15.609,14.2,16.626,17.7,0.871-3.424,8.1-11.861,16.541-17.866C67.813,47.561,82.111,42.157,82,26.686,81.809-1.557,51.861-6.014,41.981,17.29Z"/>
+    </g>
+</svg>

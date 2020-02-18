@@ -1,0 +1,149 @@
+/*
+ * -- BASE STYLES --
+ */
+ html, body {
+     height: 100%;
+ }
+body {
+    color: $text_color;
+    font:14px/1.21 $font-base;
+}
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 550px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-headers;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 24px;
+    margin: 0 0 20px;
+    text-align: left;
+}
+h3 {
+    font-size: 18px;
+    margin: 0 auto 20px;
+}
+h4 {
+    font-size: 16px;
+    line-height: 2;
+    margin: 0 auto 20px;
+}
+em {
+    //background: $em_color;
+    font-style: normal;
+}
+strong {
+    font-weight: bold;
+}
+dl, dt, dd, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+a, a:link, a:visited {
+    color:$link_color1;
+    text-decoration: none;
+    //@include transition(color);
+}
+a:hover {
+    text-decoration: none;
+}
+p {
+    margin: 0 0 1em;
+}
+section {
+    margin-bottom: 40px;
+}
+.main-page {
+    section {
+        margin-bottom: 20px;
+    }
+}
+.content_block {
+    font-size: 16px;
+    line-height: 1.625;
+    width: 70%;
+    margin: 0 auto 60px;
+    h3 {
+        margin-bottom:50px;
+    }
+    a {
+        color:$link_color1;
+        text-decoration: underline;
+        &:hover {
+            color:$link_color3;
+            text-decoration: none;
+        }
+    }
+}
+
+/*
+ * -- LAYOUT STYLES --
+ * These are some useful classes which I will need
+ */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block
+}
+.svg-sprite {
+    display: none;
+    overflow: hidden;
+}
+
+
+.container {
+    //width: 1260px;
+    margin: 0 auto;
+}
+.gap-5 {
+    padding: 5px;
+}
+.gap-10 {
+    padding: 10px;
+}
+.table {
+    text-align: center;
+    width: 100%;
+    th, td {
+        line-height: 17px;
+        padding: 9px 17px;
+        font-weight: normal;
+    }
+    thead {
+        background: #fff;
+    }
+    
+    tbody tr {
+        &:last-child td {
+            border-bottom:0;
+        }
+        td {
+            border-bottom:1px solid #fff;
+        }
+        
+    }
+    &.table--type_size {
+        th, td {
+            &:first-child {
+                padding-left: 35px;
+            }
+            &:last-child {
+                padding-right: 35px;
+            }
+        }
+    }
+}
+
+.section_header {
+    margin: 30px 0;
+    //padding: 0 10px;
+}
+.align_center {
+    text-align: center;
+}

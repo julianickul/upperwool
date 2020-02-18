@@ -1,0 +1,240 @@
+/* placeholder > */
+::-webkit-input-placeholder {
+	color:$placeholder-color;
+}
+:-moz-placeholder { /* Firefox 18- */
+	color:$placeholder-color;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+	color:$placeholder-color;
+}
+:-ms-input-placeholder {
+	color:$placeholder-color;
+}
+
+[placeholder]:focus::-webkit-input-placeholder { color:transparent; }
+[placeholder]:focus:-moz-placeholder { color: transparent; }
+.placeholder {color:$placeholder-color;}
+/* placeholder < */
+input, textarea, button, a {
+    &:focus {
+        outline: none;
+    }
+}
+
+.button {
+    display: inline-block;
+    background:$form-button-bg;
+    color:$form-button-color;
+    text-align: center;
+    height: 40px;
+    //line-height: 40px;
+    vertical-align: middle;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    @include transition(background-color);
+    &:hover {
+        background: $form-button-bg-hover;
+    }
+    span {
+        font:16px $font-base;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 10px;
+    }
+}
+a.button {
+    color:$form-button-color;
+}
+.button--type_wishlist {
+    cursor: pointer;
+    font:17px/2 $font-headers;
+    color:$form-button-color;
+    width:100%;
+    position: relative;
+    padding:0 0 0 95px;
+    .button_icon, 
+    .button_text {
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        display: block;
+    }
+    .button_icon {
+        position: absolute;
+        top:0;
+        left: 0;
+        background: #f7f7f7;
+        border:1px solid #000;
+        width: 95px;
+        svg {
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            stroke:#000;
+            color:transparent;
+        }
+    }
+    .button_text {
+        background: $form-button-bg;
+        border:1px solid $form-button-bg;
+        &:hover {
+            background: $form-button-bg-hover;
+            border:1px solid $form-button-bg-hover;
+        }
+        &:after {
+            content: '';
+            width: 0; 
+            height: 0; 
+            border: solid #cecece;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin:0 0 2px 28px;
+        }
+    }
+}
+
+
+.form {
+    .form_line {
+        padding: 20px 0;
+    }
+    .input--type_text {
+        border: 1px solid $form-button-bg;
+        height: 46px;
+        background: $form-input-bg;
+        color:$form-input-color;
+        box-shadow: none;
+        width: 100%;
+        font:15px $font-base;
+        padding: 0 10px;
+    }
+    .input--type_text, .input--type_textarea {
+        &:focus {
+            outline: none;
+        }
+    }
+    input.icon {
+        border: 0;
+    }
+}
+
+
+//- Catalog/Filters Radio/checkbox Button
+.checkbox-group {
+    .input {
+        position: absolute;
+        opacity: 0;
+      
+        & + .label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            color:#b1b1b1;
+        }
+      
+        & + .label:before {
+            //content: "\2713";
+            //color: #000;
+            margin-right: 18px;
+            margin-top: 4px;
+            display: inline-block;
+            opacity: 0;
+
+            content: '';
+            width: 6px;
+            height: 12px;
+            border: solid #b1b1b1;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+      
+        // Box hover
+        &:hover {
+            + .label{
+                color:#000;
+                &:before {
+                    border-color: #b1b1b1;
+                    opacity: 1;
+                }
+            }
+        }
+        // Box checked
+        &:checked + .label{
+            color:#000;
+            &:before {
+                //background: #000;
+                border-color: #000;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.product_size {
+    .input {
+        position: absolute;
+        opacity: 0;
+        & + .label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+        }
+        // Box checked
+        &:checked + .label{
+            background: $link_color3;
+            color:#fff;
+            &:hover {
+                border:1px solid $link_color3;
+            }
+        }
+        
+        // Disabled state label.
+        &:disabled + .label {
+            color:#959595;
+            cursor: auto;
+            &:hover{
+                border-color:transparent;
+            }
+        }
+    }
+}
+.product_color {
+    .input {
+        position: absolute;
+        opacity: 0;
+        & + .label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+        }
+        // Box checked
+        .label:hover,
+        &:checked + .label{
+            border:1px solid #000;
+        }
+    }
+}
+
+
+
+
+//- Catalog Add to Wishlist error
+.error {
+    color:$link_color3;
+    font-size: 13px;
+    border:1px solid #505050;
+    border-radius: 3px;
+    padding: 1px 10px;
+    background: #fff;
+}

@@ -1,0 +1,57 @@
+/* Acordion styles */
+.accordion {
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+        &:checked ~ .accordion_content {
+            max-height: 10em;
+        }
+
+    }
+    input[type=checkbox] + label::after {
+        content: "+";
+    }
+    input[type=checkbox]:checked + label::after {
+        content: "-";
+    }
+    label {
+        position: relative;
+        display: block;
+        padding: 10px 20px 10px 40px;
+        cursor: pointer;
+        font:16px $font-headers;
+        border-bottom: 1px solid #000;
+        &::after {
+            font-size: 22px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+          }
+    }
+    .accordion_content {
+        max-height: 0;
+        overflow: hidden;
+        color:$text_color2;
+        @include transition(max-height, .5s);
+        .gap_special {
+            padding: 20px 40px;
+        }
+        a:hover{
+            color: $link_color3;
+        }
+    }
+}
+
+
+
+

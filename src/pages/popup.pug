@@ -1,0 +1,30 @@
+//- base.pug
+extends ./templates/layout.pug
+
+block main_content
+    .container
+        section
+            .gap-10
+                .product_param-group--type_size
+                    span.product_size_table-lnk
+                        a(href="#popup_size_table") Размерная справка
+                br
+                br
+                div
+                    a#open_popup_subscribe(href="#popup_subscribe") Subscribe
+
+block append footer
+    include templates/popup_size_table
+    include templates/popup_subscribe
+
+block append body_scripts
+    script(src="./js/jquery.magnific-popup.min.js")
+    script.
+        $(function(){
+            $('.product_size_table-lnk a').magnificPopup({
+                type:'inline'
+            });
+            $('#open_popup_subscribe').magnificPopup({
+                type:'inline'
+            });
+        })

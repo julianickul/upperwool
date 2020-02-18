@@ -1,0 +1,99 @@
+//- product.pug
+extends ./templates/layout.pug
+
+block main_content
+    .container
+        section.product_view
+            .gap-10
+                .breadcrumbs
+                    a(href="javascript:void(0)") 
+                        span.breadcrumbs_icon
+                            span.icon.icon.icon--type_nav_prev
+                        span Каталог
+                .g
+                    .u-1.u-md-16-24
+                        .product_gallery
+                            .carousel_container.product_gallery_thumbs
+                                ul.carousel
+                                    li
+                                        img(src="./images/content/product_carousel_01.jpg", alt="1", data-image-val="0")
+                                    li
+                                        img(src="./images/content/product_carousel_02.jpg", alt="2", data-image-val="1")
+                                    li
+                                        img(src="./images/content/product_carousel_03.jpg", alt="3", data-image-val="2")
+                                    li
+                                        img(src="./images/content/product_carousel_04.jpg", alt="4", data-image-val="3")
+                                    li
+                                        img(src="./images/content/product_carousel_01.jpg", alt="5", data-image-val="4")
+                                .carousel_prev
+                                    span.icon.icon--type_nav_up
+                                .carousel_next
+                                    span.icon.icon--type_nav_down
+                            .carousel_container.product_gallery_main-view
+                                ul.carousel
+                                    li
+                                        img(src="./images/content/product_carousel_01.jpg", alt="1")
+                                    li
+                                        img(src="./images/content/product_carousel_02.jpg", alt="2")
+                                    li
+                                        img(src="./images/content/product_carousel_03.jpg", alt="3")
+                                    li
+                                        img(src="./images/content/product_carousel_04.jpg", alt="4")
+                                    li
+                                        img(src="./images/content/product_carousel_01.jpg", alt="5")
+                                
+                                .video
+                                    h4 ВИДЕО
+                                    a(href="javascript:void(0)")
+                                        .icon.icon--type_video_sm
+
+                        
+
+                    .u-1.u-md-8-24
+                        .product_desc
+                            .product_art Артикул  3450098
+                            .product_name Свитер с горлом
+                            .product_price 12 000 руб.
+                            .product_param-group
+                                .product_param-group--type_size
+                                    +product-size-radio
+                                    span.product_size_table-lnk
+                                        a(href="#popup_size_table") Размерная справка
+                            .product_param-group
+                                +product-color-radio
+                            .product_details
+                                dl
+                                    dt Цвет
+                                    dd Аквамарин
+                                dl
+                                    dt Состав
+                                    dd 100% шерсть
+                            
+                            div.order-now
+                                |Вам нравится? Приобретите этот товар прямо сейчас.<br/><a href="javascript:void(0)">Заказать доставку</a>
+
+                        .add-to-wishlist
+                            +add-to-wishlist-button
+                        +accordion
+        
+        section
+            h4 Вам также может понравиться
+            +carousel-products
+
+block append footer
+    include templates/popup_size_table
+    include templates/popup_subscribe
+
+block append body_scripts
+    script(src="./js/jquery.carouFredSel-6.2.1.js")
+    script(src="./js/jquery.touchSwipe.min.js")
+    script(src="./js/jquery.magnific-popup.min.js")
+    script.
+        $(function(){
+            initProductViewCarousel();
+            initProductsCarousel();
+            
+            $('.product_size_table-lnk a').magnificPopup({
+                type:'inline'
+            });
+        });

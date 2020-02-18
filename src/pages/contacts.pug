@@ -1,0 +1,67 @@
+//- Contacts.pug
+extends ./templates/layout.pug
+
+block main_content
+    .container
+        section
+            .gap-10
+                .section_header
+                    h2 контакты
+                .content_block
+                    h3 Реквизиты
+                    p.
+                        ООО «ВебИнфомСервис»<br/>
+                        Юридический адрес: улица Трудовых резервов, дом 10, Таганрог, Ростовская обл. , Россия<br/>
+                        ИНН 7839326623 КПП 783450001 ОГРН 1057813298553<br/>
+                        Р/с: 40702810900500001499<br/>
+                        в ФИЛИАЛ N 5 ОАО КБ "ЦЕНТР-ИНВЕСТ" 
+
+                
+                .showroom_container
+                    .showroom
+                        .content_block
+                            h2 Showroom в Москве
+                            p Москва, ТЦ “GOLDEN”, пер. Филипповский, 9<br/> Вт-Вс, 10:00-20:00
+
+                        .showroom_visit
+                            a(href="javascript:void(0)") Экскурсия по showroom ›
+
+                        .showroom_photo.element--state_interactive
+                            a(href="javascript:void(0)")
+                                img(src="./images/content/main_slider_01.jpg", alt="")
+                            
+                        .map
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac822f76664e1c2dee2bb81ea887ec2349d394da769efb9ffa33407f7be1e04ec&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+
+                        .content_block
+                            p.
+                                Вы можете задать вопрос в <a href="javascript:void(0)">Direct</a> / <a href="javascript:void(0)">Viber</a> / <a href="javascript:void(0)">WhatsApp</a> по номеру: +7-903-214-46-21.<br/>
+                                А также <a href="#popup_subscribe" id="open_popup_subscribe">подписаться</a> на новости showroom.
+
+
+                .content_block
+                    h3 Вопросы сотрудничества 
+                    p.
+                        По вопросам сотрудничества пишите Ивановой Марии по e-mail: <a href="javascript:void(0)">partner@wiserv.ru</a>.
+                        В <a href="javascript:void(0)">Direct</a> / <a href="javascript:void(0)">Viber</a> / <a href="javascript:void(0)">WhatsApp</a> по номеру: +7-903-214-46-21.
+
+                .content_block
+                    h3 Клиентское обслуживание
+                    p.
+                        Если у Вас появились вопросы, предложения или замечания по сервису для нашего магазина.<br/>
+                        Пишите на e-mail: <a href="javascript:void(0)">info@wiserv.ru</a> или звоните по номеру: <a href="javascript:void(0)">8 800 250 32 33</a>.<br/>
+                        Звонок бесплатный, ежедневно с 9:00 до 21:00 по московскому времени. 
+            
+        include templates/user_interaction
+
+block append footer
+    include templates/popup_subscribe
+
+block append body_scripts
+    script(src="./js/jquery.magnific-popup.min.js")
+    script.
+        $(function(){
+            $('#open_popup_subscribe').magnificPopup({
+                type:'inline'
+            });
+        })

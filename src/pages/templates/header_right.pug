@@ -1,0 +1,18 @@
+.header_tools
+    .gap-10
+        .search-bar
+            form.form(method="post", action="javascript:void(0)")
+                .form_line
+                    input.input--type_text(type="text", name="search-text")
+                    button.button--type_search(type="submit")
+                        svg(width="24", height="22", viewBox="0 0 48 42")
+                            |<use xlink:href="#magnifier" x="0" y="0" width="24" height="22"/>
+        //.wishlist-bar.empty
+            a(href="#wishlist")
+                svg(width="26", height="27", viewBox="0 0 84 74")
+                    |<use xlink:href="#heart" x="0" y="2" width="26" height="27"/>
+        .wishlist-bar
+            a(href="#wishlist")
+                svg(width="26", height="27", viewBox="0 0 84 74")
+                    |<use xlink:href="#heart" x="0" y="2" width="26" height="27"/>
+                .amount 25
